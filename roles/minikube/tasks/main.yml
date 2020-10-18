@@ -16,10 +16,12 @@
     group: "{{ usuario }}"
     mode: '0755'
 
-- name: Mover el binario e iniciar el cluster
-  shell: |
-    mv /tmp/minikube /usr/local/bin/
-    minikube start --vm-driver=none
-  
+- name: Mover el binario 
+  shell: mv /tmp/minikube /usr/local/bin/
+
+- name: Iniciar el cluster   
+  shell: minikube start --driver=docker  
+  become: yes
+  become_user: "{{ usuario }}"  
 
     
