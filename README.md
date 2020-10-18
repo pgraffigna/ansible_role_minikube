@@ -3,3 +3,8 @@
 Playbook role para crear un cluster kubernetes local con minikube.
 
 Testeado con Vagrant + Virtualbox
+
+roles:
+- docker	
+- kubectl
+- minikube 
