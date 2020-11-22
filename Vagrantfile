@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "minikube-role" do |m|
     m.vm.box = "geerlingguy/ubuntu1804"
     m.vm.network "private_network", ip: "192.168.60.10"
+    m.vm.network "forwarded_port", guest: 80, host: 30000 
     m.vm.hostname = "minikube"
   end
 

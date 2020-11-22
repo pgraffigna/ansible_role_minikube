@@ -19,9 +19,12 @@
 - name: Mover el binario 
   shell: mv /tmp/minikube /usr/local/bin/
 
-- name: Iniciar el cluster   
-  shell: minikube start --driver=docker  
-  become: yes
-  become_user: "{{ usuario }}"  
+# No es posible iniciar el cluster porque el usuario no termine de agregarse
+# al grupo Docker probe con "meta: connection_reset" y no funciona
+
+#- name: Iniciar el cluster   
+#  shell: minikube start   
+#  become: yes
+#  become_user: "{{ usuario }}"  
 
     
