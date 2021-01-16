@@ -2,4 +2,4 @@
 usuario: vagrant
 gpg: https://download.docker.com/linux/ubuntu/gpg 
 repo: https://download.docker.com/linux/ubuntu
-docker_ce: 18.06.3~ce~3-0~ubuntu
+docker_ce: 5:20.10.2~3-0~ubuntu-xenial
