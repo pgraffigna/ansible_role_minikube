@@ -1,0 +1,25 @@
+---
+- name: Descargar y descomprimir 
+  unarchive:
+    src: "{{ url }}"
+    dest: /usr/local
+    remote_src: yes 
+
+- name: Modificando .bashrc
+  blockinfile:
+    dest: "{{ home }}/.bashrc"
+    block: |
+      alias kubectl=kubecolor	
+      export GOPATH=$HOME/go
+      export GOBIN=$GOPATH/bin
+      export PATH=$GOBIN:$PATH:/usr/local/go/bin
+    marker: '# {mark} ANSIBLE MANAGED BLOCK - cambios para golang y kubecolor'
+    insertafter: EOF
+    create: yes 
+
+- name: Muestra mensaje post-tarea
+  debug:
+    msg:
+      - 'Hace falta instalar kubecolor via GO con el comando'
+      - 'go get github.com/dty1er/kubecolor/cmd/kubecolor'
+    

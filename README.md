@@ -8,6 +8,7 @@ Testeado con Vagrant + Virtualbox
 roles:
 - docker	
 - kubectl
+- kubecolor
 - helm
 - minikube 
 
